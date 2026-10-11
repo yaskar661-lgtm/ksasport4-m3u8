@@ -59,7 +59,7 @@ def api_latest():
         "timestamp": cache["timestamp"]
     })
 
-@app.route('/live/alraitv.m3u8', methods=['GET'])
+@app.route('/live/ksasport4.m3u8', methods=['GET'])
 def dynamic_m3u8_redirect():
     """Ana m3u8 yönlendirme endpoint'i (HTTP 302)"""
     hls_url = asyncio.run(get_latest_hls_url())
