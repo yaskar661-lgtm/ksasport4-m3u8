@@ -176,7 +176,6 @@ def segment_proxy():
             server_host = f"{request.scheme}://{request.host}"
 
             # Taban URL'yi (base_url) re.sub ile /playlist.m3u8 kısmını veya dosya adını temizleyerek elde edelim
-            # Örnek: .../alraitv_source/chunks.m3u8 -> .../alraitv_source/ kök dizini
             base_target_url = re.sub(r'[^/]+\.m3u8.*$', '', target_url)
 
             for line in lines:
@@ -220,5 +219,5 @@ def segment_proxy():
 
 if __name__ == '__main__':
     import os
-    port = int(os.environ.get("PORT", 5000)) else "5000"
+    port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, threaded=True)
